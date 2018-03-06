@@ -4,12 +4,12 @@
 % Copyright (C) Ryan Webster, 2018
 
 % fn = './../simoncelli textures/campbell.jpg';
-fn = 'in1.jpg';
+fn = 'bones2.jpg';
 
 %options
 N_iter = 3;
 N_eig = 150;
-in_scale = .25;
+in_scale = .5;
 pool_layers = [4,3]; %pooling layers of vgg-19 for coarse to fine refinement
 
 x0 = double(imread(fn))/255;
@@ -42,7 +42,7 @@ for iter = 1:N_iter
     y0 = decoder_net.getValue('output');
     
   end
-  
+  imshow(y0);drawnow;
 end
 
 
